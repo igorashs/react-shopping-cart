@@ -1,4 +1,4 @@
 import { GlobalTheme } from './GlobalTheme';
-import { defaultTheme, darkTheme } from './themes';
+import { createTheme } from './createTheme';
 
-export { GlobalTheme, defaultTheme, darkTheme };
+export { GlobalTheme, createTheme };
