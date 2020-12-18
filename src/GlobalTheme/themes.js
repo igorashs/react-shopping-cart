@@ -6,10 +6,11 @@ const breakpoints = {
 };
 
 const colors = {
-  textPrimary: '#383838',
-  textSecondary: '#282828',
-  secondary: '#69d484',
-  primary: '#fff'
+  textPrimary: '#282828',
+  textSecondary: '#383838',
+  primary: '#93e0a6',
+  secondary: '#bae0c2',
+  bodyBg: '#fff'
 };
 
 const typography = {
@@ -34,7 +35,8 @@ export const darkTheme = {
   breakpoints: { ...breakpoints },
   textPrimary: '#fff',
   textSecondary: '#fff',
-  secondary: '#2f3594;',
-  primary: '#282828',
+  primary: '#2f3594',
+  secondary: '#626594',
+  bodyBg: '#282828',
   ...typography
 };

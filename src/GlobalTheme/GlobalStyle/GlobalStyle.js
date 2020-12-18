@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
   ${typography}
 
   body {
-    background-color: var(--primary);
+    background-color: var(--body-bg);
+  }
+
+  :focus {
+    outline: dashed 2px var(--text-secondary);
+    outline-offset: 3px;
   }
 `;

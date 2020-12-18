@@ -3,6 +3,7 @@ import { css } from 'styled-components';
 export const rootVariables = css`
   :root {
     /* colors */
+    --body-bg: ${({ theme }) => theme.bodyBg};
     --primary: ${({ theme }) => theme.primary};
     --secondary: ${({ theme }) => theme.secondary};
     --text-primary: ${({ theme }) => theme.textPrimary};

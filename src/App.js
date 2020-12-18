@@ -21,19 +21,17 @@ function App() {
       <Router>
         <Header />
         <Container>
-          <main>
-            <Switch>
-              <Route exact path='/'>
-                <Home onThemeSwap={handleThemeSwap} />
-              </Route>
-              <Route exact path='/shop'>
-                <Shop />
-              </Route>
-              <Route exact path='/cart'>
-                <Cart />
-              </Route>
-            </Switch>
-          </main>
+          <Switch>
+            <Route exact path='/'>
+              <Home onThemeSwap={handleThemeSwap} />
+            </Route>
+            <Route exact path='/shop'>
+              <Shop />
+            </Route>
+            <Route exact path='/cart'>
+              <Cart />
+            </Route>
+          </Switch>
         </Container>
       </Router>
     </GlobalTheme>

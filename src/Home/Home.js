@@ -1,6 +1,8 @@
+import { Button } from '../shared/Button';
+
 export function Home({ onThemeSwap }) {
   return (
-    <>
+    <main>
       <h1>Home Page!</h1>
       <h2>Goo shopping!</h2>
       <p>
@@ -17,7 +19,7 @@ export function Home({ onThemeSwap }) {
         of Letraset sheets containing
       </p>
 
-      <button onClick={onThemeSwap}>swap theme</button>
-    </>
+      <Button onClick={onThemeSwap}>swap theme</Button>
+    </main>
   );
 }

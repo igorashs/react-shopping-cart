@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const StyledSvg = styled.svg`
-  width: 2rem;
-  height: 2rem;
   color: var(--text-primary);
 `;
 

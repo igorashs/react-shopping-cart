@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledContainer = styled.div`
+export const Container = styled.div`
   /* mobile first */
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 540px;
@@ -24,11 +24,7 @@ const StyledContainer = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    width: auto;
-    margin: 0 1rem;
+    width: 100%;
+    padding: 0 1rem;
   }
 `;
-
-export function Container({ children }) {
-  return <StyledContainer>{children}</StyledContainer>;
-}

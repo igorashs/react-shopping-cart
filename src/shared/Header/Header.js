@@ -6,19 +6,10 @@ import cartImg from './cart.svg';
 
 const HeaderWrapper = styled.div`
   width: 100%;
-  position: static;
-  background-color: var(--secondary);
-`;
-
-const StyledHeader = styled.header`
-  width: 100%;
-  height: 96px;
+  height: calc(var(--baseline) * 3);
   display: flex;
   align-items: center;
-`;
-
-const Nav = styled.nav`
-  width: 100%;
+  background-color: var(--primary);
 `;
 
 const LinksList = styled.ul`
@@ -35,17 +26,22 @@ const LinkItem = styled.li`
 `;
 
 const LinkCartItem = styled.li`
-  display: flex;
   flex: 1;
+  display: flex;
   justify-content: flex-end;
+
+  a {
+    width: 2rem;
+    height: 2rem;
+  }
 `;
 
 export function Header() {
   return (
     <HeaderWrapper>
       <Container>
-        <StyledHeader>
-          <Nav>
+        <header>
+          <nav>
             <LinksList>
               <LinkItem>
                 <Link to='/'>Home</Link>
@@ -59,8 +55,8 @@ export function Header() {
                 </Link>
               </LinkCartItem>
             </LinksList>
-          </Nav>
-        </StyledHeader>
+          </nav>
+        </header>
       </Container>
     </HeaderWrapper>
   );

@@ -27,6 +27,11 @@ export const typography = css`
     margin-bottom: var(--baseline);
   }
 
+  a {
+    color: var(--text-secondary);
+    text-decoration-style: dashed;
+  }
+
   h1,
   h2,
   h3,
@@ -36,11 +41,12 @@ export const typography = css`
     font-family: var(--headers-font-family);
     font-weight: var(--headers-font-weight);
     line-height: var(--headers-line-height);
-    color: var(--text-secondary);
+    color: var(--text-primary);
   }
 
   /* mobile first sizes */
   h1 {
+    margin-top: 0;
     font-size: calc(var(--textScale) * 2rem);
   }
 
