@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createTheme } from './createTheme';
 
 const Themes = [
@@ -35,8 +35,19 @@ export const useTheme = () => {
   const changeTheme = (name) => {
     const theme = Themes.find((t) => t.name === name);
 
-    setTheme(theme);
+    if (theme) {
+      setTheme(theme);
+      localStorage.setItem('theme', name);
+    }
   };
+
+  useEffect(() => {
+    const name = localStorage.getItem('theme');
+
+    if (name) {
+      changeTheme(name);
+    }
+  }, []);
 
   return [theme, changeTheme];
 };

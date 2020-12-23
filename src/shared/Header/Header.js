@@ -14,7 +14,7 @@ const HeaderWrapper = styled.div`
 
 const LinksList = styled.ul`
   display: flex;
-  gap: 1.5rem;
+  gap: calc(var(--baseline) * 2);
   align-items: center;
 `;
 
