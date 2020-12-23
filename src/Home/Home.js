@@ -1,25 +1,37 @@
+import styled from 'styled-components';
 import { Button } from '../shared/Button';
+import { Link } from 'react-router-dom';
 
-export function Home({ onThemeSwap }) {
+const ThemeContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--baseline);
+
+  > * {
+    flex: 1 1 140px;
+  }
+`;
+
+export function Home({ onThemeChange }) {
   return (
     <main>
-      <h1>Home Page!</h1>
-      <h2>Goo shopping!</h2>
+      <h1>Get that Item!</h1>
+      <h2>
+        Goo and add something to your Cart! <br />
+        <Link to='/shop'> &gt; Shop</Link>
+      </h2>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industrys standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book.
       </p>
-
-      <p>
-        It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged{' '}
-        <a href='#'>Here</a>. It was popularised in the 1960s with the release
-        of Letraset sheets containing
-      </p>
-
-      <Button onClick={onThemeSwap}>swap theme</Button>
+      <h2>Themes</h2>
+      <ThemeContainer>
+        <Button onClick={() => onThemeChange('default')}>default</Button>
+        <Button onClick={() => onThemeChange('darkTheme')}>dark</Button>
+        <Button onClick={() => onThemeChange('forestTheme')}>forest</Button>
+      </ThemeContainer>
     </main>
   );
 }

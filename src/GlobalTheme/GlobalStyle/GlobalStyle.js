@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :focus {
-    outline: dashed 2px var(--text-secondary);
+    outline: dashed 2px var(--body-color);
     outline-offset: 3px;
   }
 `;

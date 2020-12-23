@@ -33,6 +33,7 @@ const LinkCartItem = styled.li`
   a {
     width: 2rem;
     height: 2rem;
+    color: var(--text-primary);
   }
 `;
 

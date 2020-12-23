@@ -10,7 +10,7 @@ export const typography = css`
     font-family: var(--body-font-family);
     font-weight: var(--body-font-weight);
     line-height: var(--body-line-height);
-    color: var(--text-primary);
+    color: var(--body-color);
   }
 
   /* Inherit fonts for inputs and buttons */
@@ -28,7 +28,7 @@ export const typography = css`
   }
 
   a {
-    color: var(--text-secondary);
+    color: var(--body-accent);
     text-decoration-style: dashed;
   }
 
@@ -41,7 +41,7 @@ export const typography = css`
     font-family: var(--headers-font-family);
     font-weight: var(--headers-font-weight);
     line-height: var(--headers-line-height);
-    color: var(--text-primary);
+    color: var(--body-color);
   }
 
   /* mobile first sizes */

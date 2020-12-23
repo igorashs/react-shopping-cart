@@ -9,8 +9,12 @@ const StyledButton = styled.button`
   border: 0;
   border-radius: 4px;
   color: var(--text-secondary);
-  background-color: var(--secondary);
-  box-shadow: 1px 1px 2px var(--text-primary);
+  background-color: var(--secondary-dark);
+  box-shadow: 1px 1px 2px var(--body-color);
+
+  :hover {
+    background-color: var(--secondary);
+  }
 
   ${({ small }) => small && smallBtn}
 `;

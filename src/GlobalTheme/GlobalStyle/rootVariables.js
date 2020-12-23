@@ -3,9 +3,13 @@ import { css } from 'styled-components';
 export const rootVariables = css`
   :root {
     /* colors */
-    --body-bg: ${({ theme }) => theme.bodyBg};
     --primary: ${({ theme }) => theme.primary};
     --secondary: ${({ theme }) => theme.secondary};
+    --secondary-light: ${({ theme }) => theme.secondaryLight};
+    --secondary-dark: ${({ theme }) => theme.secondaryDark};
+    --body-bg: ${({ theme }) => theme.bodyBg};
+    --body-color: ${({ theme }) => theme.bodyColor};
+    --body-accent: ${({ theme }) => theme.bodyAccent};
     --text-primary: ${({ theme }) => theme.textPrimary};
     --text-secondary: ${({ theme }) => theme.textSecondary};
 
