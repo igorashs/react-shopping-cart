@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Container } from '../Layout';
-import { Svg } from '../Svg';
-import cartImg from './cart.svg';
+import { CartWidget } from './CartWidget';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -14,7 +13,8 @@ const HeaderWrapper = styled.div`
 
 const LinksList = styled.ul`
   display: flex;
-  gap: calc(var(--baseline) * 2);
+  flex-wrap: wrap;
+  gap: var(--baseline);
   align-items: center;
 `;
 
@@ -31,8 +31,7 @@ const LinkCartItem = styled.li`
   justify-content: flex-end;
 
   a {
-    width: 2rem;
-    height: 2rem;
+    display: block;
     color: var(--text-primary);
   }
 `;
@@ -52,7 +51,7 @@ export function Header() {
               </LinkItem>
               <LinkCartItem>
                 <Link to='/cart'>
-                  <Svg href={cartImg} id='cart' title='navigate to cart' />
+                  <CartWidget />
                 </Link>
               </LinkCartItem>
             </LinksList>
