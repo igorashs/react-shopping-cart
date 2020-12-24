@@ -4,7 +4,7 @@ const smallBtn = css`
   padding: calc(var(--baseline) / 4);
 `;
 
-const StyledButton = styled.button`
+export const Button = styled.button`
   padding: calc(var(--baseline) / 2);
   border: 0;
   border-radius: 4px;
@@ -18,7 +18,3 @@ const StyledButton = styled.button`
 
   ${({ small }) => small && smallBtn}
 `;
-
-export function Button(props) {
-  return <StyledButton {...props} />;
-}
