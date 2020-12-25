@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Svg } from '../../Svg';
 import cartIcon from './cart.svg';
 import circleIcon from './circle.svg';
+import { useCartState } from '../../../CartContext';
 
 const Wrapper = styled.div`
   display: flex;
@@ -36,15 +37,18 @@ const Circle = styled.div`
 `;
 
 export function CartWidget() {
-  //TODO conditional count
+  const { itemCount } = useCartState();
+
   return (
     <Wrapper>
-      <Count>{10}</Count>
+      {itemCount > 0 && <Count>{itemCount}</Count>}
       <Icon>
         <Svg href={cartIcon} id='cart' title='navigate to cart' />
-        <Circle>
-          <Svg href={circleIcon} id='circle' title='cart items' />
-        </Circle>
+        {itemCount > 0 && (
+          <Circle>
+            <Svg href={circleIcon} id='circle' title='cart items' />
+          </Circle>
+        )}
       </Icon>
     </Wrapper>
   );
