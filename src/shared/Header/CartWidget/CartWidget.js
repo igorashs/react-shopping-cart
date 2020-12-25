@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Svg } from '../../Svg';
 import cartIcon from './cart.svg';
 import circleIcon from './circle.svg';
-import { useCartState } from '../../../CartContext';
+import { useCartState } from '../../../cart-context';
 
 const Wrapper = styled.div`
   display: flex;
