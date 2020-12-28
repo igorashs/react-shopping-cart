@@ -20,3 +20,7 @@ npm run start
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/web/guides/quick-start)
 - [styled-components](https://styled-components.com/)
+
+## Acknowledgments
+
+[Assets](https://raventale.itch.io/daily-doodles-pixelart-asset-pack)
