@@ -8,9 +8,10 @@ function cartReducer(state, action) {
   switch (action.type) {
     case 'add-item':
       return {
-        items: [...state.items, action.payload],
-        itemCount: state.itemCount + 1
+        items: [...state.items, action.item],
+        itemsCount: state.itemsCount + 1
       };
+
     default:
       throw new Error(`Unhandled action type ${action.type}`);
   }
@@ -19,7 +20,7 @@ function cartReducer(state, action) {
 function CartProvider({ children }) {
   const [state, dispatch] = useReducer(cartReducer, {
     items: [],
-    itemCount: 0
+    itemsCount: 0
   });
 
   return (

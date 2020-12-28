@@ -37,14 +37,14 @@ const Circle = styled.div`
 `;
 
 export function CartWidget() {
-  const { itemCount } = useCartState();
+  const { itemsCount } = useCartState();
 
   return (
     <Wrapper>
-      {itemCount > 0 && <Count>{itemCount}</Count>}
+      {itemsCount > 0 && <Count>{itemsCount}</Count>}
       <Icon>
         <Svg href={cartIcon} id='cart' title='navigate to cart' />
-        {itemCount > 0 && (
+        {itemsCount > 0 && (
           <Circle>
             <Svg href={circleIcon} id='circle' title='cart items' />
           </Circle>
