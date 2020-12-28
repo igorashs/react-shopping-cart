@@ -3,6 +3,7 @@ import { GlobalTheme, useTheme } from './GlobalTheme';
 import { Header } from './shared/Header';
 import { Container, Wrapper } from './shared/Layout';
 import { CartProvider } from './cart-context';
+import { ShopProvider } from './shop-context';
 import { Home } from './Home';
 import { Shop } from './Shop';
 import { Cart } from './Cart';
@@ -17,17 +18,19 @@ function App() {
           <Header />
           <Wrapper>
             <Container>
-              <Switch>
-                <Route exact path='/'>
-                  <Home onThemeChange={changeTheme} />
-                </Route>
-                <Route exact path='/shop'>
-                  <Shop />
-                </Route>
-                <Route exact path='/cart'>
-                  <Cart />
-                </Route>
-              </Switch>
+              <ShopProvider>
+                <Switch>
+                  <Route exact path='/'>
+                    <Home onThemeChange={changeTheme} />
+                  </Route>
+                  <Route exact path='/shop'>
+                    <Shop />
+                  </Route>
+                  <Route exact path='/cart'>
+                    <Cart />
+                  </Route>
+                </Switch>
+              </ShopProvider>
             </Container>
           </Wrapper>
         </CartProvider>
