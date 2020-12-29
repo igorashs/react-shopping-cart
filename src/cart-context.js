@@ -3,6 +3,11 @@ import { createContext, useContext, useReducer } from 'react';
 const CartContext = createContext();
 const CartDispatchContext = createContext();
 
+const INITIAL = {
+  items: [],
+  itemsCount: 0
+};
+
 function cartReducer(state, action) {
   switch (action.type) {
     case 'increment-item': {
@@ -52,16 +57,19 @@ function cartReducer(state, action) {
       };
     }
 
+    case 'reset-cart': {
+      return {
+        ...INITIAL
+      };
+    }
+
     default:
       throw new Error(`Unhandled action type ${action.type}`);
   }
 }
 
 function CartProvider({ children }) {
-  const [state, dispatch] = useReducer(cartReducer, {
-    items: [],
-    itemsCount: 0
-  });
+  const [state, dispatch] = useReducer(cartReducer, { ...INITIAL });
 
   return (
     <CartContext.Provider value={state}>

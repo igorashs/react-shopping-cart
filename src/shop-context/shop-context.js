@@ -29,7 +29,7 @@ function shopReducer(state, action) {
         )
       };
 
-    case 'reset-items':
+    case 'reset-shop':
       return {
         items: [...ITEMS]
       };
