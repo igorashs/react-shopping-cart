@@ -8,30 +8,30 @@ function shopReducer(state, action) {
   switch (action.type) {
     case 'decrement-item':
       return {
-        items: state.items.map((item) =>
-          item.id === action.item.id ? { ...item, count: item.count - 1 } : item
+        items: state.items.map((i) =>
+          i.id === action.item.id ? { ...i, count: i.count - 1 } : i
         )
       };
 
     case 'increment-item':
       return {
-        items: state.items.map((item) =>
-          item.id === action.item.id ? { ...item, count: item.count + 1 } : item
+        items: state.items.map((i) =>
+          i.id === action.item.id ? { ...i, count: i.count + 1 } : i
         )
       };
 
     case 'restore-item':
       return {
-        items: state.items.map((item) =>
-          item.id === action.item.id
-            ? { ...item, count: item.count + action.count }
-            : item
+        items: state.items.map((i) =>
+          i.id === action.item.id
+            ? { ...i, count: i.count + action.item.count }
+            : i
         )
       };
 
     case 'reset-items':
       return {
-        items: ITEMS
+        items: [...ITEMS]
       };
 
     default:

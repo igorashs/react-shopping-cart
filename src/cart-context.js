@@ -4,11 +4,11 @@ const CartContext = createContext();
 const CartDispatchContext = createContext();
 
 function cartReducer(state, action) {
-  // TODO add required types
   switch (action.type) {
-    case 'add-item': {
+    case 'increment-item': {
       const item = state.items.find((i) => i.id === action.item.id);
 
+      // check if item exists in cart
       if (item) {
         return {
           items: state.items.map((i) =>
@@ -18,9 +18,37 @@ function cartReducer(state, action) {
         };
       }
 
+      // add new item in cart
       return {
         items: [...state.items, { ...action.item, count: 1 }],
         itemsCount: state.itemsCount + 1
+      };
+    }
+
+    case 'decrement-item': {
+      // remove one instance of item from cart
+      if (action.item.count > 1) {
+        return {
+          items: state.items.map((i) =>
+            i.id === action.item.id
+              ? { ...action.item, count: action.item.count - 1 }
+              : i
+          ),
+          itemsCount: state.itemsCount - 1
+        };
+      }
+
+      // remove item from cart
+      return {
+        items: state.items.filter((i) => i.id !== action.item.id),
+        itemsCount: state.itemsCount - 1
+      };
+    }
+
+    case 'remove-item': {
+      return {
+        items: state.items.filter((i) => i.id !== action.item.id),
+        itemsCount: state.itemsCount - action.item.count
       };
     }
 
