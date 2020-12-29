@@ -121,7 +121,7 @@ export function Item({ item }) {
           <Button
             onClick={() => {
               shopDispatch({ type: 'decrement-item', item });
-              cartDispatch({ type: 'add-item', item });
+              cartDispatch({ type: 'increment-item', item });
             }}
             disabled={item.count <= 0}
           >
