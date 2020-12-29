@@ -9,21 +9,21 @@ function shopReducer(state, action) {
     case 'decrement-item':
       return {
         items: state.items.map((item) =>
-          item.id === action.id ? { ...item, count: item.count - 1 } : item
+          item.id === action.item.id ? { ...item, count: item.count - 1 } : item
         )
       };
 
     case 'increment-item':
       return {
         items: state.items.map((item) =>
-          item.id === action.id ? { ...item, count: item.count + 1 } : item
+          item.id === action.item.id ? { ...item, count: item.count + 1 } : item
         )
       };
 
     case 'restore-item':
       return {
         items: state.items.map((item) =>
-          item.id === action.id
+          item.id === action.item.id
             ? { ...item, count: item.count + action.count }
             : item
         )
