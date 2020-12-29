@@ -16,5 +16,10 @@ export const Button = styled.button`
     background-color: var(--secondary);
   }
 
+  :disabled {
+    opacity: 0.7;
+    background-color: var(--secondary-dark) !important;
+  }
+
   ${({ small }) => small && smallBtn}
 `;
