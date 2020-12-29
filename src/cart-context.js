@@ -6,11 +6,23 @@ const CartDispatchContext = createContext();
 function cartReducer(state, action) {
   // TODO add required types
   switch (action.type) {
-    case 'add-item':
+    case 'add-item': {
+      const item = state.items.find((i) => i.id === action.item.id);
+
+      if (item) {
+        return {
+          items: state.items.map((i) =>
+            i.id === item.id ? { ...item, count: item.count + 1 } : i
+          ),
+          itemsCount: state.itemsCount + 1
+        };
+      }
+
       return {
-        items: [...state.items, action.item],
+        items: [...state.items, { ...action.item, count: 1 }],
         itemsCount: state.itemsCount + 1
       };
+    }
 
     default:
       throw new Error(`Unhandled action type ${action.type}`);
