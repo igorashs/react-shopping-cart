@@ -3,6 +3,7 @@ import { useCart } from '../cart-context';
 import { useShopDispatch } from '../shop-context';
 import { Button } from '../shared/Button';
 import { Item } from './Item';
+import { useHistory } from 'react-router-dom';
 
 const ItemList = styled.div`
   display: flex;
@@ -34,6 +35,7 @@ const CartInfo = styled.div`
 export function Cart() {
   const [cart, cartDispatch] = useCart();
   const shopDispatch = useShopDispatch();
+  const history = useHistory();
 
   return (
     <main>
@@ -58,7 +60,13 @@ export function Cart() {
             >
               clear
             </Button>
-            <Button>checkout</Button>
+            <Button
+              onClick={() => {
+                history.push('/checkout');
+              }}
+            >
+              checkout
+            </Button>
           </Actions>
         </>
       ) : (

@@ -7,6 +7,7 @@ import { ShopProvider } from './shop-context';
 import { Home } from './Home';
 import { Shop } from './Shop';
 import { Cart } from './Cart';
+import { Checkout } from './Checkout';
 
 function App() {
   const [theme, changeTheme] = useTheme();
@@ -28,6 +29,9 @@ function App() {
                   </Route>
                   <Route exact path='/cart'>
                     <Cart />
+                  </Route>
+                  <Route exact path='/checkout'>
+                    <Checkout />
                   </Route>
                 </Switch>
               </ShopProvider>
