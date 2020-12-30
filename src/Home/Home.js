@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { Button } from '../shared/Button';
 import { Link } from 'react-router-dom';
+import { useChangeTheme } from '../app-theme-context';
 
-const ThemeContainer = styled.div`
+const Actions = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: var(--baseline);
@@ -12,7 +13,9 @@ const ThemeContainer = styled.div`
   }
 `;
 
-export function Home({ onThemeChange }) {
+export function Home() {
+  const changeTheme = useChangeTheme();
+
   return (
     <main>
       <h1>Get that Item!</h1>
@@ -25,11 +28,11 @@ export function Home({ onThemeChange }) {
         industry. Lorem... well enough go shop now!
       </p>
       <h2>Themes</h2>
-      <ThemeContainer>
-        <Button onClick={() => onThemeChange('default')}>default</Button>
-        <Button onClick={() => onThemeChange('darkTheme')}>dark</Button>
-        <Button onClick={() => onThemeChange('forestTheme')}>forest</Button>
-      </ThemeContainer>
+      <Actions>
+        <Button onClick={() => changeTheme('default')}>default</Button>
+        <Button onClick={() => changeTheme('darkTheme')}>dark</Button>
+        <Button onClick={() => changeTheme('forestTheme')}>forest</Button>
+      </Actions>
     </main>
   );
 }

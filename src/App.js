@@ -1,28 +1,26 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { GlobalTheme, useTheme } from './GlobalTheme';
-import { Header } from './shared/Header';
-import { Container, Wrapper } from './shared/Layout';
+import { AppThemeProvider } from './app-theme-context';
 import { CartProvider } from './cart-context';
 import { ShopProvider } from './shop-context';
+import { Header } from './shared/Header';
+import { Wrapper, Container } from './shared/Layout';
 import { Home } from './Home';
 import { Shop } from './Shop';
 import { Cart } from './Cart';
 import { Checkout } from './Checkout';
 
 function App() {
-  const [theme, changeTheme] = useTheme();
-
   return (
     <Router>
-      <GlobalTheme theme={theme}>
+      <AppThemeProvider>
         <CartProvider>
-          <Header />
-          <Wrapper>
-            <Container>
-              <ShopProvider>
+          <ShopProvider>
+            <Header />
+            <Wrapper>
+              <Container>
                 <Switch>
                   <Route exact path='/'>
-                    <Home onThemeChange={changeTheme} />
+                    <Home />
                   </Route>
                   <Route exact path='/shop'>
                     <Shop />
@@ -34,11 +32,11 @@ function App() {
                     <Checkout />
                   </Route>
                 </Switch>
-              </ShopProvider>
-            </Container>
-          </Wrapper>
+              </Container>
+            </Wrapper>
+          </ShopProvider>
         </CartProvider>
-      </GlobalTheme>
+      </AppThemeProvider>
     </Router>
   );
 }
