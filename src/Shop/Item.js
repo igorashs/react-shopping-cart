@@ -4,45 +4,24 @@ import { Button } from '../shared/Button';
 import { useShopDispatch } from '../shop-context';
 
 const ItemWrapper = styled.article`
-  --gap: var(--baseline);
-
   display: grid;
-  gap: var(--gap);
+  grid-template-rows: auto 1fr;
   padding: calc(var(--baseline) / 2);
+  gap: var(--baseline);
   border-radius: 4px;
   background-color: var(--primary);
   color: var(--text-primary);
   box-shadow: 1px 1px 2px var(--body-color);
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    --gap: calc(var(--baseline) * 2);
-    padding: var(--baseline);
-  }
 `;
 
-const Figure = styled.div`
+const Figure = styled.figure`
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap);
+  flex-direction: column;
 
-  figcaption {
-    flex: 1;
-
-    h2 {
-      margin: 0;
-      padding: 0 calc(var(--baseline) / 2);
-      color: var(--text-primary);
-      overflow-wrap: break-word;
-    }
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      display: flex;
-      align-items: center;
-
-      h2 {
-        padding: 0;
-      }
-    }
+  h2 {
+    margin: var(--baseline) calc(var(--baseline) / 2) 0;
+    color: var(--text-primary);
+    overflow-wrap: break-word;
   }
 `;
 
@@ -59,23 +38,23 @@ const ImgWrapper = styled.div`
     image-rendering: pixelated;
     image-rendering: crisp-edges;
   }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    max-width: 224px;
-  }
 `;
 
-const Details = styled.div`
+const Details = styled.section`
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--baseline);
 
   p {
     max-width: 720px;
   }
 `;
 
-const DescriptionSection = styled.section`
+const Description = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: calc(var(--baseline) / 2);
   border-radius: 4px;
   background-color: var(--body-bg);
@@ -88,7 +67,7 @@ const Stats = styled.p`
   color: var(--body-accent);
 `;
 
-const BuySection = styled.section`
+const Actions = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -113,11 +92,11 @@ export function Item({ item }) {
         </figcaption>
       </Figure>
       <Details>
-        <DescriptionSection>
+        <Description>
           <p>{item.description}</p>
           <Stats>{item.stats}</Stats>
-        </DescriptionSection>
-        <BuySection>
+        </Description>
+        <Actions>
           <small>Stock: x{item.count}</small>
           <Button
             onClick={() => {
@@ -128,7 +107,7 @@ export function Item({ item }) {
           >
             Add to Cart
           </Button>
-        </BuySection>
+        </Actions>
       </Details>
     </ItemWrapper>
   );

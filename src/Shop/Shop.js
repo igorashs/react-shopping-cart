@@ -3,9 +3,14 @@ import { Item } from './Item';
 import styled from 'styled-components';
 
 const ItemList = styled.div`
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--baseline);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export function Shop() {
