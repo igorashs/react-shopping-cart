@@ -1,10 +1,7 @@
 import styled from 'styled-components';
+import { Header } from './Header';
 
-export const Wrapper = styled.div`
-  margin: var(--baseline) 0;
-`;
-
-export const Container = styled.div`
+const Container = styled.div`
   /* mobile first */
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 540px;
@@ -32,3 +29,32 @@ export const Container = styled.div`
     padding: 0 1rem;
   }
 `;
+
+const HeaderWrapper = styled.div`
+  height: calc(var(--baseline) * 3);
+  display: flex;
+  align-items: center;
+  background-color: var(--primary);
+`;
+
+const MainWrapper = styled.div`
+  margin: var(--baseline) 0;
+`;
+
+export function Layout({ children }) {
+  return (
+    <>
+      <HeaderWrapper>
+        <Container>
+          <Header />
+        </Container>
+      </HeaderWrapper>
+
+      <MainWrapper>
+        <Container>
+          <main>{children}</main>
+        </Container>
+      </MainWrapper>
+    </>
+  );
+}

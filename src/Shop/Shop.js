@@ -12,12 +12,12 @@ export function Shop() {
   const { items } = useShopState();
 
   return (
-    <main>
+    <>
       <ItemList>
         {items.map((item) => (
           <Item key={item.id} item={item} />
         ))}
       </ItemList>
-    </main>
+    </>
   );
 }

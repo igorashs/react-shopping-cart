@@ -57,6 +57,7 @@ const ImgWrapper = styled.div`
     margin: 0 auto;
     width: 112px;
     image-rendering: pixelated;
+    image-rendering: crisp-edges;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {

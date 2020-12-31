@@ -38,7 +38,7 @@ export function Cart() {
   const history = useHistory();
 
   return (
-    <main>
+    <>
       {cart.itemsCount > 0 ? (
         <>
           <CartInfo>
@@ -72,6 +72,6 @@ export function Cart() {
       ) : (
         <p>Cart is empty :X</p>
       )}
-    </main>
+    </>
   );
 }

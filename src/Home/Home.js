@@ -17,7 +17,7 @@ export function Home() {
   const changeTheme = useChangeTheme();
 
   return (
-    <main>
+    <>
       <h1>Get that Item!</h1>
       <h2>
         Goo and add something to your Cart! <br />
@@ -33,6 +33,6 @@ export function Home() {
         <Button onClick={() => changeTheme('darkTheme')}>dark</Button>
         <Button onClick={() => changeTheme('forestTheme')}>forest</Button>
       </Actions>
-    </main>
+    </>
   );
 }
