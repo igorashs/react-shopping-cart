@@ -3,7 +3,7 @@ import { useCartDispatch } from '../cart-context';
 import { useShopDispatch } from '../shop-context';
 import { Button } from '../shared/Button';
 
-const ItemWrapper = styled.div`
+const ItemWrapper = styled.li`
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;

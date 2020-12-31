@@ -2,7 +2,7 @@ import { useShopState } from '../shop-context';
 import { Item } from './Item';
 import styled from 'styled-components';
 
-const ItemList = styled.div`
+const ItemList = styled.ul`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;

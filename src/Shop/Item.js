@@ -3,7 +3,7 @@ import { useCartDispatch } from '../cart-context';
 import { Button } from '../shared/Button';
 import { useShopDispatch } from '../shop-context';
 
-const ItemWrapper = styled.article`
+const ItemWrapper = styled.li`
   display: grid;
   grid-template-rows: auto 1fr;
   padding: calc(var(--baseline) / 2);

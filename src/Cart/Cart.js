@@ -5,7 +5,7 @@ import { Button } from '../shared/Button';
 import { Item } from './Item';
 import { useHistory } from 'react-router-dom';
 
-const ItemList = styled.div`
+const ItemList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: var(--baseline);
@@ -37,41 +37,39 @@ export function Cart() {
   const shopDispatch = useShopDispatch();
   const history = useHistory();
 
-  return (
-    <>
-      {cart.itemsCount > 0 ? (
-        <>
-          <CartInfo>
-            <h2>Cart</h2>
-            <p>Total items: {cart.itemsCount}</p>
-          </CartInfo>
-          <ItemList>
-            {cart.items.map((item) => (
-              <Item key={item.id} item={item} />
-            ))}
-          </ItemList>
+  if (cart.itemsCount > 0) {
+    return (
+      <>
+        <CartInfo>
+          <h2>Cart</h2>
+          <p>Total items: {cart.itemsCount}</p>
+        </CartInfo>
+        <ItemList>
+          {cart.items.map((item) => (
+            <Item key={item.id} item={item} />
+          ))}
+        </ItemList>
 
-          <Actions>
-            <Button
-              onClick={() => {
-                cartDispatch({ type: 'reset-cart' });
-                shopDispatch({ type: 'reset-shop' });
-              }}
-            >
-              clear
-            </Button>
-            <Button
-              onClick={() => {
-                history.push('/checkout');
-              }}
-            >
-              checkout
-            </Button>
-          </Actions>
-        </>
-      ) : (
-        <p>Cart is empty :X</p>
-      )}
-    </>
-  );
+        <Actions>
+          <Button
+            onClick={() => {
+              cartDispatch({ type: 'reset-cart' });
+              shopDispatch({ type: 'reset-shop' });
+            }}
+          >
+            clear
+          </Button>
+          <Button
+            onClick={() => {
+              history.push('/checkout');
+            }}
+          >
+            checkout
+          </Button>
+        </Actions>
+      </>
+    );
+  } else {
+    return <p>Cart is empty :X</p>;
+  }
 }
