@@ -4,14 +4,12 @@ import { useShopDispatch } from '../shop-context';
 import { Button } from '../shared/Button';
 
 const ItemWrapper = styled.div`
-  --gap: var(--baseline);
-
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   justify-content: space-between;
-  gap: var(--gap);
-  padding-bottom: var(--gap);
+  gap: var(--baseline);
+  padding-bottom: var(--baseline);
   border-bottom: 1px solid var(--body-color);
 
   p {
@@ -26,7 +24,7 @@ const ItemWrapper = styled.div`
 const Actions = styled.div`
   justify-self: end;
   display: flex;
-  gap: var(--gap);
+  gap: var(--baseline);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     grid-column: span 2;
