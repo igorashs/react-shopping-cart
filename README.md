@@ -24,3 +24,7 @@ npm run start
 ## Acknowledgments
 
 [Assets](https://raventale.itch.io/daily-doodles-pixelart-asset-pack)
+
+## License
+
+This project is licensed under the MIT License
