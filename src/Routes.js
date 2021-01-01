@@ -6,6 +6,7 @@ import { Home } from './Home';
 import { Shop } from './Shop';
 import { Cart } from './Cart';
 import { Checkout } from './Checkout';
+import { NotFound } from './NotFound';
 import { Layout } from './shared/Layout';
 
 export function Routes() {
@@ -26,6 +27,9 @@ export function Routes() {
               </Route>
               <Route exact path='/checkout'>
                 <Checkout />
+              </Route>
+              <Route path='*'>
+                <NotFound />
               </Route>
             </Switch>
           </Layout>
