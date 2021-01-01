@@ -31,14 +31,20 @@ const Container = styled.div`
 `;
 
 const HeaderWrapper = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
   height: calc(var(--baseline) * 3);
   display: flex;
   align-items: center;
   background-color: var(--primary);
+  box-shadow: 0px 1px 1px var(--body-color);
+  z-index: 4096;
 `;
 
 const MainWrapper = styled.div`
-  margin: var(--baseline) 0;
+  margin: calc(var(--baseline) * 4) 0;
 `;
 
 export function Layout({ children }) {
