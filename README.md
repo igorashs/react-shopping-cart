@@ -2,7 +2,7 @@
 
 > ## From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/shopping-chart)
 
-> - [Live Demo]() **SOON** :shipit:
+> - [Live Demo](https://igorashs.github.io/react-shopping-cart/) :shipit:
 
 ## Getting Started
 
