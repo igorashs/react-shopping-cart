@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Header } from './Header';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Container = styled.div`
   /* mobile first */
@@ -47,9 +49,20 @@ const MainWrapper = styled.div`
   margin: calc(var(--baseline) * 4) 0;
 `;
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 export function Layout({ children }) {
   return (
     <>
+      <ScrollToTop />
       <HeaderWrapper>
         <Container>
           <Header />
