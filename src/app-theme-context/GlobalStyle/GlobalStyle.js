@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
   ${typography}
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--body-bg);
   }
