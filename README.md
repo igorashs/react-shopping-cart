@@ -1,6 +1,6 @@
 # Shopping Chart
 
-> ## From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/shopping-chart)
+> ## From The Odin Project's [curriculum](https://www.theodinproject.com/courses/javascript/lessons/shopping-cart)
 
 > - [Live Demo](https://igorashs.github.io/react-shopping-cart/) :shipit:
 
